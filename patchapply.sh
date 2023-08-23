@@ -1,7 +1,7 @@
 #!/bin/bash
-ORACLE_HOME=/u01/app/oracle/may23/middleware
-PATCHPATH=/u01/app/oracle/may23/middleware/patches
-LOG=/u01/app/oracle/may23/middleware/cfgtoollogs/opatch
+ORACLE_HOME=/u01/app/oracle/may23/Middleware
+PATCHPATH=/u01/app/oracle/may23/Middleware/patches
+LOG=/u01/app/oracle/may23/Middleware/cfgtoollogs/opatch
 rm -f $LOG/opatch`date +%Y-%m-%d_%H`*.log
 cp patche12c/*Generic.zip $PATCHPATH
 $ORACLE_HOME/OPatch/opatch lsinventory
