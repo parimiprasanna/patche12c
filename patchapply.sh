@@ -1,10 +1,10 @@
 #!/bin/bash
-PATCH_DOWNLOAD=/u01/app/oracle/software/12.2.1.2.0-patch
+#PATCH_DOWNLOAD=/u01/app/oracle/software/12.2.1.2.0-patch
 ORACLE_HOME=/u01/app/oracle/may23/Middleware
 PATCHPATH=/u01/app/oracle/may23/Middleware/patches
 LOG=/u01/app/oracle/may23/Middleware/cfgtoollogs/opatch
 rm -f $LOG/opatch`date +%Y-%m-%d_%H`*.log
-cp $PATCH_DOWNLOAD/*Generic.zip $PATCHPATH
+cp patche12c/*Generic.zip $PATCHPATH
 $ORACLE_HOME/OPatch/opatch lsinventory
 DATE=`date +%Y-%m-%d_%H`
 cd  $PATCHPATH
