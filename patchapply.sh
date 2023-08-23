@@ -1,8 +1,7 @@
 #!/bin/bash
-#PATCH_DOWNLOAD=/u01/app/oracle/software/12.2.1.2.0-patch
-ORACLE_HOME=/u01/app/oracle/may23/Middleware
-PATCHPATH=/u01/app/oracle/may23/Middleware/patches
-LOG=/u01/app/oracle/may23/Middleware/cfgtoollogs/opatch
+ORACLE_HOME=/u01/app/oracle/may23/middleware
+PATCHPATH=/u01/app/oracle/may23/middleware/patches
+LOG=/u01/app/oracle/may23/middleware/cfgtoollogs/opatch
 rm -f $LOG/opatch`date +%Y-%m-%d_%H`*.log
 cp patche12c/*Generic.zip $PATCHPATH
 $ORACLE_HOME/OPatch/opatch lsinventory
@@ -10,7 +9,7 @@ DATE=`date +%Y-%m-%d_%H`
 cd  $PATCHPATH
 for j in `ls p*_Generic.zip`
 do
-unzip $j
+unzip -o $j
 done
 rm *.zip
 cd  $PATCHPATH
@@ -27,4 +26,3 @@ else
 echo " $i Patch has already applied, so not applying the $i patch"
 fi
 done
-
